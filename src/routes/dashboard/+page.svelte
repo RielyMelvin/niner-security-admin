@@ -121,6 +121,7 @@
         background-color: #00703C;
         padding: 10px 20px;
     }
+
     h1 {
         margin: 0; 
         font-family: 'Bebas Neue', sans-serif; 
@@ -129,6 +130,7 @@
         text-align: center; 
         flex-grow: 1;
     }
+
     .logout-button {
         margin-right: 20px; 
         font-family: 'Bebas Neue', sans-serif; 
@@ -140,6 +142,7 @@
         border-radius: 10px; 
         padding: 8px 16px; 
     }
+
     .logout-button:hover {
         background-color: #005f2c; 
     }
@@ -211,21 +214,34 @@
     }
 
     .filter-container {
+        font-family: 'Bebas Neue', sans-serif; 
+        padding-left: 10px;
         margin: 20px 0;
         display: flex;
         align-items: center;
         gap: 10px;
+        color: #fff;
+        background-color: #00703C;
+        border-color: #000;
+        border-radius: 10px;
     }
 
     #dispositionFilter {
+        font-family: 'Bebas Neue', sans-serif; 
         padding: 5px;
         border-radius: 5px;
         font-size: 1em;
+        color: #fff;
+        background-color: #00703C;
+        border-color: #00703C;
+        border-radius: 10px;
     }
+
+    
 
     .report-container select {
         padding: 4px;
-        border-radius: 5px;
+        border-radius: 10px;
         font-size: 0.9em;
     }
 
