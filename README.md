@@ -20,8 +20,9 @@ By giving administratives at UNC Charlotte a way to look at the reports from stu
 - Access to add and descriptions needed for other admins to see
 - Access to send alerts to users who are using the application
 ### Admin Description
-It is currently in development and will serve as way for admins to communicate with one another if something is going on with the report
-- Add text to user reports to ensure if someone may have already been contacted and is in communication with admins others can see that
+- Press 'Edit' button next to 'Admin Description:' field in a report
+- Press 'Cancel' if want to not change the report
+- Press 'Save' to save admin description to what user has added
 ### Niner Alerts:
 It is currently in development and will serve as the area to look at any alerts that campus police have put out. The functionality for it right now is:
 - A list of campus police reports that the students can look at
