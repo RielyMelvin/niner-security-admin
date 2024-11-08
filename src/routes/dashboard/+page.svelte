@@ -96,6 +96,11 @@
         goto('/'); 
     }
 
+    // Alert function
+    async function alert() {
+        goto('/alerts');
+    }
+
     fetchReports();
 </script>
 
@@ -132,6 +137,18 @@
     }
 
     .logout-button {
+        margin-right: 20px; 
+        font-family: 'Bebas Neue', sans-serif; 
+        color: #fff; 
+        font-size: 1.5em; 
+        cursor: pointer; 
+        background-color: #00703C; 
+        border: none; 
+        border-radius: 10px; 
+        padding: 8px 16px; 
+    }
+
+    .alert-button {
         margin-right: 20px; 
         font-family: 'Bebas Neue', sans-serif; 
         color: #fff; 
@@ -249,6 +266,7 @@
 
 <div class="header-container">
     <h1>Admin Dashboard - User Posts</h1>
+    <button class="alert-button" on:click={alert} type="button">Send Alert</button>
     <button class="logout-button" on:click={logout} type="button">Logout</button>
 </div>
 
