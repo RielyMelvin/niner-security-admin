@@ -21,26 +21,32 @@
         console.error("Error logging in:", error);
     }
 }
-
-
 </script>
 
 <style>
-  :global(body) {
-    background-color: #CCFFDD; 
-    margin: 0;
-    padding: 0;
-    height: auto; 
-    min-height: 100vh; 
-    display: flex;
-    justify-content: center;
-    align-items: flex-start; 
-}
+   :global(body) {
+        background-color: #CCFFDD; 
+        margin: 0;
+        padding: 0;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: flex-start; 
+        overflow-x: hidden;
+    }
 
 
   * {
     box-sizing: border-box;
   }
+
+  .login-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+}
 
   .container {
     max-width: 400px;
@@ -94,20 +100,21 @@
     color: red;
   }
 </style>
+<div class="login-wrapper">
+  <div class="container">
+    <h1>Niner Security Administration</h1>
+    <form on:submit|preventDefault={handleLogin}>
+      <label for="email">Email</label>
+      <input type="email" id="email" bind:value={email} placeholder="Enter your email" required />
 
-<div class="container">
-  <h1>Niner Security Administration</h1>
-  <form on:submit|preventDefault={handleLogin}>
-    <label for="email">Email</label>
-    <input type="email" id="email" bind:value={email} placeholder="Enter your email" required />
+      <label for="password">Password</label>
+      <input type="password" id="password" bind:value={password} placeholder="Enter your password" required />
 
-    <label for="password">Password</label>
-    <input type="password" id="password" bind:value={password} placeholder="Enter your password" required />
+      <button type="submit">Login</button>
+    </form>
 
-    <button type="submit">Login</button>
-  </form>
-
-  {#if message}
-    <div class="message">{message}</div>
-  {/if}
+    {#if message}
+      <div class="message">{message}</div>
+    {/if}
+  </div>
 </div>
