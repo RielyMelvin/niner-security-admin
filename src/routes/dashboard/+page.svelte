@@ -1,3 +1,4 @@
+
 <script lang="ts">
     import { pb } from '$lib/pocketbase';
     import { goto } from '$app/navigation';
@@ -131,12 +132,15 @@
         goto('/alerts');
     }
 
+    async function alert_history(){
+        goto('/alert_history');
+    }
+
     fetchReports();
 </script>
 
 <style>
-
-:global(body) {
+    :global(body) {
         background-color: #CCFFDD; 
         margin: 0;
         padding: 0;
@@ -149,7 +153,6 @@
         overflow-x: hidden;
     }
 
-    
     .header-container {
         display: flex;
         justify-content: space-between;
@@ -168,7 +171,7 @@
         flex-grow: 1;
     }
 
-    .logout-button {
+    .logout-button, .alert-button {
         margin-right: 10px; 
         font-family: 'Bebas Neue', sans-serif; 
         color: #fff; 
@@ -180,19 +183,7 @@
         padding: 8px 16px; 
     }
 
-    .alert-button {
-        margin-right: 20px; 
-        font-family: 'Bebas Neue', sans-serif; 
-        color: #fff; 
-        font-size: 1.5em; 
-        cursor: pointer; 
-        background-color: #00703C; 
-        border: none; 
-        border-radius: 10px; 
-        padding: 8px 16px; 
-    }
-
-    .logout-button:hover {
+    .logout-button:hover, .alert-button:hover {
         background-color: #005f2c; 
     }
 
@@ -314,9 +305,10 @@
 
 
 <div class="header-container">
+    <button class="alert-button" on:click={alert} type="button">Create Alert</button>
+    <button class="alert-button" on:click={alert_history} type="button">View Alerts</button>
     <h1>Admin Dashboard - User Posts</h1>
-    <button class="alert-button" on:click={alert} type="button">Send Alert</button>
-    <button class="logout-button" on:click={logout} type="button">Logout</button>
+    <button class="logout-button" on:click={logout} type="button">Logout</button>    
 </div>
 
 
@@ -364,5 +356,3 @@
         </div>
     </div>
 {/each}
-
-

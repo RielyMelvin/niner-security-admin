@@ -68,14 +68,23 @@
         overflow-x: hidden;
     }
 
+    input {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+    }
+
     .alert-container {
-        padding: 20px;
-        border: 1px solid #AD9651;
-        border-radius: 10px;
-        background-color: #fff;
         max-width: 400px;
         margin: 0 auto;
-        height: auto;
+        padding: 20px;
+        border: 1px solid #AD9651;
+        background-color: white;
+        border-radius: 10px;
+        box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        height: auto; 
     }
 
     h2 {
@@ -95,6 +104,7 @@
         margin-bottom: 10px;
         border: 1px solid #ccc;
         border-radius: 5px;
+        margin-right: 10px;
     }
 
     button {
@@ -126,11 +136,10 @@
     <h2>Send Alert</h2>
     <form on:submit|preventDefault={sendAlert}>
         <label for="userSelect">Alert Title: </label>
-        <textarea id="alertTitle" bind:value={alertTitle} rows="1" placeholder="Enter alert title" required></textarea>
+        <input type="alertTitle" id="alertTitle" bind:value={alertTitle} placeholder="Enter Alert Title" required />
         
-
         <label for="alertDescription">Alert Description:</label>
-        <textarea id="alertDescription" bind:value={alertDescription} rows="4" placeholder="Enter alert description" required></textarea>
+        <input type="alertDescription" id="alertDescription" bind:value={alertDescription} placeholder="Enter alert description" required />
 
         <button type="submit">Send Alert</button>
     </form>
