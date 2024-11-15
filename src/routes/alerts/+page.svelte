@@ -15,24 +15,59 @@
 
     // Function to create and send alert
     async function sendAlert() {
-        try {
-            // Create the alert document
-            const alertData = {
-                alert_title: alertTitle,
-                alert_description: alertDescription,
-                date_time: new Date().toISOString(),
-            };
-            const response = await pb.collection('alerts').create(alertData)
-            goto('/dashboard');
-        } catch (error) {
-            console.error('Error sending alert:', error);
-            errorMessage = 'Failed to send alert.';
-        }
+    try {
+        // Create the alert document
+        const currentDateTime = new Date();
+        
+        // Format the time
+        const timeOptions = {
+            timeZone: 'America/New_York',
+            hour: 'numeric',
+            minute: '2-digit',
+            hour12: true
+        };
+        const formattedTime = currentDateTime.toLocaleTimeString('en-US', timeOptions);
+
+        // Format the date
+        const dateOptions = {
+            timeZone: 'America/New_York',
+            month: '2-digit',
+            day: '2-digit',
+            year: 'numeric'
+        };
+        const formattedDate = currentDateTime.toLocaleDateString('en-US', dateOptions);
+
+        // Combine time and date
+        const formattedDateTime = `${formattedTime} ${formattedDate}`;
+
+        const alertData = {
+            alert_title: alertTitle,
+            alert_description: alertDescription,
+            date_time: formattedDateTime // Set the formatted string
+        };
+
+        const response = await pb.collection('alerts').create(alertData);
+        goto('/dashboard');
+    } catch (error) {
+        console.error('Error sending alert:', error);
+        errorMessage = 'Failed to send alert.';
     }
+}
 </script>
 
 <style>
-    /* Style your alert system */
+    :global(body) {
+        background-color: #CCFFDD; 
+        margin: 0;
+        padding: 0;
+        height: 100vh; 
+        display: flex;
+        flex-direction: column; 
+        align-items: center;
+        justify-content: flex-start; 
+        overflow-x: hidden;
+    }
+
     .alert-container {
         padding: 20px;
         border: 1px solid #AD9651;
@@ -40,6 +75,7 @@
         background-color: #fff;
         max-width: 400px;
         margin: 0 auto;
+        height: auto;
     }
 
     h2 {
