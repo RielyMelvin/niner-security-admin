@@ -1,5 +1,6 @@
 <script lang="ts">
     import { pb } from '$lib/pocketbase';
+    import { goto } from '$app/navigation';
 
     interface Alert {
         alert_title: string;
@@ -22,8 +23,7 @@
                 date_time: new Date().toISOString(),
             };
             const response = await pb.collection('alerts').create(alertData)
-            // Show a success message and clear fields
-            successMessage = 'Alert sent successfully!';
+            goto('/dashboard');
         } catch (error) {
             console.error('Error sending alert:', error);
             errorMessage = 'Failed to send alert.';
