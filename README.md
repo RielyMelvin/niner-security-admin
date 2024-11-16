@@ -8,7 +8,7 @@ By giving administratives at UNC Charlotte a way to look at the reports from stu
 - Ensure other admins can see if a report has been looked into or not
 
 # Setup Instructions
-1) Install (Node.js)[https://nodejs.org/en/] and follow the instructions given for it.
+1) Install [Node.js](https://nodejs.org/en/) and follow the instructions given for it.
 2) Next you should be able to download the project in any given folder you have created in your Command Prompt with 'git clone https://github.com/RielyMelvin/niner-security-admin.git'
 3) You should do be able to do 'cd repository-name'
 4) Now do 'npm install' to get the dependencies for Svelte
@@ -19,7 +19,7 @@ If you do not want to do the command-line stuff
 2) Now open the file with either Visual Studio Code, Visual Studio or VSCode (whichever you prefer)
 3) Run 'npm install' for dependencies
 4) Run 'npm run dev' to run the project on your local machine
-### REMEMBER to run the Pocketbase server alongside the web-application in order to obtain the correct results. For use, run it in the mobile application which instructions can be found (here)[https://github.com/yibab/niner_security]
+### REMEMBER to run the Pocketbase server alongside the web-application in order to obtain the correct results. For use, run it in the mobile application which instructions can be found [here](https://github.com/yibab/niner_security)
 
 # Usage Details
 ### Log In:
