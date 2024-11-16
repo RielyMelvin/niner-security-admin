@@ -137,6 +137,7 @@
     }
 
     fetchReports();
+
 </script>
 
 <style>
@@ -155,7 +156,7 @@
 
     .header-container {
         display: flex;
-        justify-content: space-between;
+        justify-content: center;
         align-items: center;
         width: 100%;
         background-color: #00703C;
@@ -188,7 +189,6 @@
     }
 
     h3 {
-        margin: 10px 0; 
         color: #00703C; 
         font-size: 1.5em; 
         font-weight: bold;
@@ -234,7 +234,7 @@
         margin-left: auto; 
     }
 
-    .delete-button{
+    .delete-button, .cancel-button{
         background-color: #b30000;
         color: #fff;
         padding: 8px 16px;
@@ -246,16 +246,15 @@
         margin-left: 5px;
     }
 
-
-    .delete-button:hover{
+    .delete-button:hover, .cancel-button:hover{
         background-color: #8b0000;
     }
 
-    .delete-button:active {
+    .delete-button:active, .cancel-button:active {
         background-color: #660000; 
     }
 
-    .edit-button, .save-button, .cancel-button {
+    .edit-button, .save-button{
         background-color: #00703C;
         color: #fff;
         padding: 8px 16px;
@@ -303,14 +302,12 @@
     }
 </style>
 
-
 <div class="header-container">
     <button class="alert-button" on:click={alert} type="button">Create Alert</button>
     <button class="alert-button" on:click={alert_history} type="button">View Alerts</button>
     <h1>Admin Dashboard - User Posts</h1>
     <button class="logout-button" on:click={logout} type="button">Logout</button>    
 </div>
-
 
 <div class="filter-container">
     <label for="dispositionFilter">Filter by Disposition:</label>

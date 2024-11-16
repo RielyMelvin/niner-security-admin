@@ -36,8 +36,7 @@
         overflow-x: hidden;
     }
 
-
-  * {
+    * {
     box-sizing: border-box;
   }
 
