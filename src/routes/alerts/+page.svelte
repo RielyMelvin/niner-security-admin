@@ -101,15 +101,6 @@
         font-size: 1.5em;
         text-align: center;
     }
-
-    h3 {
-        color: #00703C; 
-        font-size: 1.5em; 
-        font-weight: bold;
-        text-decoration: underline; 
-        border-bottom: 2px solid #AD9651; 
-        padding-bottom: 2px; 
-    }
   
     label {
         display: block;
@@ -119,25 +110,27 @@
     .submit-button {
         background-color: #00703C;
         color: #fff;
-        padding: 8px 16px;
+        width: 100%;
+        padding: 10px;
         border: none;
-        border-radius: 10px;
+        border-radius: 7.5px;
         cursor: pointer;
         font-size: .75em;
         transition: background-color 0.3s;
-        margin-left: 5px;
+        margin-top: 10px;
     }
   
     .cancel-button {
         background-color: #b30000;
         color: #fff;
-        padding: 8px 16px;
+        width: 100%;
+        padding: 10px;
         border: none;
-        border-radius: 10px;
+        border-radius: 7.5px;
         cursor: pointer;
         font-size: .75em;
         transition: background-color 0.3s;
-        margin-left: 5px;
+        margin-top: 10px;
     }
   
     .submit-button:hover {
@@ -149,16 +142,11 @@
     }
 
     .submit-button:active {
-        background-color: #003d1a;
+        background-color: #005a2c;
     }
 
     .cancel-button:active {
         background-color: #660000; 
-    }
-
-    .alert-title {
-        font-weight: bold;
-        color: #00703C;
     }
 
     .alert-create-footer {
@@ -183,10 +171,9 @@
       <label for="alertDescription">Alert Description:</label>
       <input type="text" id="alertDescription" bind:value={alertDescription} placeholder="Enter alert description" required />
   
-      <div class="alert-create-footer">
-        <button type="button" class="cancel-button" on:click={cancel}>Cancel</button>
-        <button type="submit" class="submit-button">Send Alert</button>
-      </div>
+      <button type="submit" class="submit-button">Send Alert</button>
+      <button type="button" class="cancel-button" on:click={cancel}>Cancel</button>
+
     </form>
   
     {#if errorMessage}
