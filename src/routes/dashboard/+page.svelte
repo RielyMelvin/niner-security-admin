@@ -172,6 +172,18 @@
         flex-grow: 1;
     }
 
+    .spacer-button{
+        margin-right: 10px; 
+        font-family: 'Bebas Neue', sans-serif; 
+        color: #00703C; 
+        font-size: 1.5em; 
+        cursor: pointer; 
+        background-color: #00703C; 
+        border: none; 
+        border-radius: 10px; 
+        padding: 8px 16px; 
+    }
+
     .logout-button, .alert-button {
         margin-right: 10px; 
         font-family: 'Bebas Neue', sans-serif; 
@@ -306,7 +318,8 @@
     <button class="alert-button" on:click={alert} type="button">Create Alert</button>
     <button class="alert-button" on:click={alert_history} type="button">View Alerts</button>
     <h1>Admin Dashboard - User Posts</h1>
-    <button class="logout-button" on:click={logout} type="button">Logout</button>    
+    <button class="spacer-button" type="button">Logout</button>
+    <button class="logout-button" on:click={logout} type="button">Logout</button>      
 </div>
 
 <div class="filter-container">
